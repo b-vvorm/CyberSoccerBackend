@@ -7,4 +7,5 @@ log/*
 .DS_Store
 public/flash/**
 coverage/**
+test/**
 
