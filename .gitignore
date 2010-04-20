@@ -8,4 +8,5 @@ log/*
 public/flash/**
 coverage/**
 test/**
+html/**
 

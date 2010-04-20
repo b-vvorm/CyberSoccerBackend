@@ -1,13 +1,28 @@
-<h1>Login</h1>
-
-<% form_for @user_session, :url => auth_user_session_path do |f| %>
-  <%= f.error_messages %>
-  <%= f.label :email %><br />
-  <%= f.text_field :email %><br />
-  <br />
-  <%= f.label :password %><br />
-  <%= f.password_field :password %><br />
-  <br />
-  <%= f.submit "Login" %>
-<% end %>
+<div class="prepend-7">
+  <div class="span-10 default-container corner-all">
+    <div class="header corner-top">
+        Sign in
+    </div>
+    <div class="content prepend-1">
+        <% form_for @user_session, :url => auth_user_session_path, :html => {:class => "default-form"} do |f| %>
+          <div class="clear prepend-3">
+              <%= link_to 'Sign up', new_auth_account_url %>
+          </div>
+          <div class="clear">
+              <%= f.label :email, "", {:class => "span-3"} %>
+              <%= f.text_field :email, :class => "prepend-1 span-5" %>
+          </div>
+          <div class="clear">
+              <%= f.label :password, "", {:class => "span-3"} %>
+              <%= f.password_field :password, :class => "prepend-1 span-5" %>
+          </div>
+          <div class="clear prepend-6">
+              <% #= f.submit "Sign in", :class => "button" %>
+              <%= link_to_function "Sign in", "$(this).up('.default-form').submit()", :class => "button span-2" %>
+          </div>
+          <div class="clear"></div>
+        <% end %>
+    </div>
+  </div>
+</div>
 

@@ -1,0 +1,96 @@
+/* Common blocks start */
+html, body {
+  height:100%;
+}
+.float-left {
+    float: left;
+}
+.container {
+  position: relative;
+  padding: 0 1em;
+  min-height: 100%;
+  //background-color: #E8EFFB;
+  //border-left: 1px solid #CCCCCC;
+  //border-right: 1px solid #CCCCCC;
+}
+#header {
+  padding: 0.5em 0px;
+  font-weight: bold;
+  border-bottom: 1px solid #CCCCCC;
+}
+#content {
+  float: left;
+  padding: 1em 0 2em 0;
+}
+#footer {
+  position: absolute;
+  width: 830px;
+  height: 2em;
+  bottom:0;
+  padding-top: 0.5em;
+  //background-color: #E8EFFB;
+  border-top: 1px solid #CCCCCC;
+}
+.default-container {
+  font-family: Lucida Grande, Lucida Sans, Arial, sans-serif;
+  font-size: 1.1em;
+}
+.default-container .header {
+  border: 1px solid #4297d7;
+  background: #5c9ccc url(../images/redmond/ui-bg_gloss-wave_55_5c9ccc_500x100.png) 50% 50% repeat-x;
+  color: #ffffff;
+  font-weight: bold;
+  padding-left: 10px;
+}
+.default-container .content {
+  border: 1px solid #a6c9e2;
+  border-top: none;
+  background: #fcfdfd url(../images/redmond/ui-bg_inset-hard_100_fcfdfd_1x100.png) 50% bottom repeat-x;
+  color: #222222;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+/* Common blocks finish */
+
+/* Forms start */
+.default-form .button {
+  border: 1px solid #c5dbec;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  background: #dfeffc url(../images/redmond/ui-bg_glass_85_dfeffc_1x400.png) 50% 50% repeat-x;
+  font-weight: bold;
+  color: #2e6e9e;
+  outline: none;
+  text-decoration: none;
+  text-align: center;
+  margin: 2px 0;
+}
+.default-form .button:hover {
+  border: 1px solid #79b7e7;
+  background: #d0e5f5 url(../images/redmond/ui-bg_glass_75_d0e5f5_1x400.png) 50% 50% repeat-x;
+  color: #1d5987;
+}
+.default-form input[type=text], .default-form input[type=password] {
+  border: 1px solid #c5dbec;
+  color: #1d5987;
+  margin: 2px 2px;
+}
+.default-form label {
+  text-align: right;
+  color: #1d5987;
+  margin: 2px 2px;
+}
+/* Forms finish */
+
+/* Corner radius start */
+.corner-tl { -moz-border-radius-topleft: 5px; -webkit-border-top-left-radius: 5px; }
+.corner-tr { -moz-border-radius-topright: 5px; -webkit-border-top-right-radius: 5px; }
+.corner-bl { -moz-border-radius-bottomleft: 5px; -webkit-border-bottom-left-radius: 5px; }
+.corner-br { -moz-border-radius-bottomright: 5px; -webkit-border-bottom-right-radius: 5px; }
+.corner-top { -moz-border-radius-topleft: 5px; -webkit-border-top-left-radius: 5px; -moz-border-radius-topright: 5px; -webkit-border-top-right-radius: 5px; }
+.corner-bottom { -moz-border-radius-bottomleft: 5px; -webkit-border-bottom-left-radius: 5px; -moz-border-radius-bottomright: 5px; -webkit-border-bottom-right-radius: 5px; }
+.corner-right {  -moz-border-radius-topright: 5px; -webkit-border-top-right-radius: 5px; -moz-border-radius-bottomright: 5px; -webkit-border-bottom-right-radius: 5px; }
+.corner-left { -moz-border-radius-topleft: 5px; -webkit-border-top-left-radius: 5px; -moz-border-radius-bottomleft: 5px; -webkit-border-bottom-left-radius: 5px; }
+.corner-all { -moz-border-radius: 5px; -webkit-border-radius: 5px; }
+/* Corner radius finish */
+

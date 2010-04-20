@@ -1,6 +1,7 @@
 class Auth::UserSessionsController < ApplicationController
   before_filter :require_no_user, :only => [:new, :create]
   before_filter :require_user, :only => :destroy
+  layout 'auth'
 
   def new
     @user_session = UserSession.new
@@ -10,7 +11,7 @@ class Auth::UserSessionsController < ApplicationController
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
       flash[:notice] = "Login successful!"
-      redirect_back_or_default auth_account_url
+      redirect_back_or_default games_url
     else
       render :action => :new
     end

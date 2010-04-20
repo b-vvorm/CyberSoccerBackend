@@ -45,7 +45,9 @@ ActionController::Routing::Routes.draw do |map|
     auth.resources :users
   end
 
-  map.root :controller => "auth/user_sessions", :action => "new" # optional, this just sets the root route
+  map.resources :games
+
+  map.root :controller => "games"
 
 
   map.connect ':controller/:action/:id'
