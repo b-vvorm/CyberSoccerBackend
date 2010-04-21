@@ -46,6 +46,7 @@ ActionController::Routing::Routes.draw do |map|
   end
 
   map.resources :games
+  map.resources :teams
 
   map.root :controller => "games"
 

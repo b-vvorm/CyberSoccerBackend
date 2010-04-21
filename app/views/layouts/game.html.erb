@@ -10,15 +10,12 @@
     <div class="container">
       <div id="wrapper">
         <div id="header">
-          <div class="float-left">
             <h6><%= @current_user.email %></h6>
-          </div>
-          <div class="span-2">
-            <%= link_to 'Sign out', "user_sessions/destroy" %>
-          </div>
+            <%= link_to 'Sign out', "auth/user_sessions/destroy" %>
           <div class="clear"></div>
         </div>
         <div id="content">
+          <%= render '/layouts/menu' %>
           <%= yield %>
         </div>
         <div class="clear"></div>

@@ -9,7 +9,7 @@
           <%= render :partial => "form", :object => f %>
           <div class="clear prepend-4">
               <div class="span-2">
-                  <%= link_to_function "Sign up", "$(this).up('.default-form').submit()", :class => "button span-2" %>
+                  <%= link_to_function "Sign up", "$('.default-form').submit()", :class => "button span-2" %>
               </div>
               <div class="span-2">
                   <%= link_to 'Cancel', auth_account_url, :class => "button span-2" %>
