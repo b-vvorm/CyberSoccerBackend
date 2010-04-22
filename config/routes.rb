@@ -45,8 +45,8 @@ ActionController::Routing::Routes.draw do |map|
     auth.resources :users
   end
 
-  map.resources :games
-  map.resources :teams
+  map.resources :games, :collection => {:grid_data => :get}
+  map.resources :teams, :collection => {:grid_data => :get}
 
   map.root :controller => "games"
 

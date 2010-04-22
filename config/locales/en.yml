@@ -1,5 +1,11 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
-  hello: "Hello world"
+  application:
+    title: "agile tool"
+    admin_title: "agile tool [administrative suite]"
+    permission_denied: "Permission denied. You cannot access the requested page."
+    login_required: "Login is required to access the requested page."
+  date:
+    formats:
+      short: "%d/%m/%Y"
+      date_picker: "%d/%m/%Y"
+
