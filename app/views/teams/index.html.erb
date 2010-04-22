@@ -1,2 +1,19 @@
 <h1>Teams</h1>
 
+<%= jqgrid("Teams", "teams", "/teams",
+	[
+		{ :field => "id", :label => "ID", :width => 35, :resizable => false, :align => "center" },
+		{ :field => "name", :label => "Team Name", :width => 200, :align => "center" }
+		#{ :field => "created_at", :label => "Creation date"}
+	],
+	{}
+) %>
+
+<script type="text/javascript">
+
+$(function() {
+  $("#teams").setGridWidth(500);
+});
+
+</script>
+
