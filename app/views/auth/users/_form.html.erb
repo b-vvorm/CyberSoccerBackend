@@ -3,11 +3,11 @@
     <%= form.text_field :email, :class => "prepend-1 span-5" %>
 </div>
 <div class="clear">
-    <%= form.label :password, form.object.new_record? ? nil : "Change password", :class => "span-3" %>
+    <%= form.label :password, "", :class => "span-3" %>
     <%= form.password_field :password, :class => "span-5" %>
 </div>
 <div class="clear">
-    <%= form.label :password_confirmation, "Repeat", :class => "span-3" %>
+    <%= form.label :password_confirmation, t("auth.repeat_password"), :class => "span-3" %>
     <%= form.password_field :password_confirmation, :class => "span-5" %>
 </div>
 

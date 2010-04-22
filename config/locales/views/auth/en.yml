@@ -1,0 +1,9 @@
+en:
+  auth:
+    sign_in: "Sign in"
+    sign_on: "Sign on"
+    sign_out: "Sign out"
+    change_password: "Change password"
+    repeat_password: "Repeat"
+    cancel: "Cancel"
+

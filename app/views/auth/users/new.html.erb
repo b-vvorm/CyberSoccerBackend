@@ -1,7 +1,8 @@
+<% title(t("auth.sign_on")) %>
 <div class="prepend-7">
   <div class="span-10 default-container corner-all">
     <div class="header corner-top">
-        Sign up
+        <%= t("auth.sign_on") %>
     </div>
     <div class="content prepend-1">
         <% form_for @user, :url => auth_account_path, :html => {:class => "default-form"} do |f| %>
@@ -9,10 +10,10 @@
           <%= render :partial => "form", :object => f %>
           <div class="clear prepend-4">
               <div class="span-2">
-                  <%= link_to_function "Sign up", "$('.default-form').submit()", :class => "button span-2" %>
+                  <%= link_to_function t("auth.sign_on"), "$('.default-form').submit()", :class => "button span-2" %>
               </div>
               <div class="span-2">
-                  <%= link_to 'Cancel', auth_account_url, :class => "button span-2" %>
+                  <%= link_to t("auth.cancel"), auth_account_url, :class => "button span-2" %>
               </div>
           </div>
           <div class="clear"></div>

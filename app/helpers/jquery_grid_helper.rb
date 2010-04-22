@@ -6,9 +6,13 @@ module JqueryGridHelper
   # Includes jquery grid javascripts.
   def javascript_include_jqgrid
     locale = I18n.locale rescue :en
-    js = ''
-    js << javascript_include_tag("jqgrid/i18n/grid.locale-#{locale}.js") + "\n"
-    js << javascript_include_merged(:grid) + "\n"
+#    js = ''
+#    js << javascript_include_tag("jqgrid/i18n/grid.locale-#{locale}.js") + "\n"
+#    js << javascript_include_merged(:grid) + "\n"
+
+
+    javascript_merged "jqgrid/i18n/grid.locale-#{locale}", "grid"
+
   end
 
   # Renders helper javascript method for grid with new, edit, view and delete buttons.
@@ -35,7 +39,7 @@ module JqueryGridHelper
     row_buttons += get_row_buttons(show_view, show_edit)
     grid_buttons += get_grid_buttons(show_add)
 
-    fields << { :field => "action_view", :label => "", :width => 20, :search => false } if show_view
+    #fields << { :field => "action_view", :label => "", :width => 20, :search => false } if show_view
     fields << { :field => "action_edit", :label => "", :width => 20, :search => false } if show_edit
 
     output = jqgrid("", grid_name, url_for(:action => "grid_data"), fields, options)
@@ -83,7 +87,7 @@ module JqueryGridHelper
     if show_view
       buttons << {
         :path => url_for(:action => "show", :id => ":id"),
-        :title => t("view_details", :scope => @controller.controller_path.split("/") << params[:action]),
+        :title => t("view_details", :scope => @controller.controller_path.split("/")),
         :icon => "ui-icon-comment",
         :column => "action_view"
       }
@@ -92,7 +96,7 @@ module JqueryGridHelper
     if show_edit
       buttons << {
         :path => url_for(:action => "edit", :id => ":id"),
-        :title => t("edit_details", :scope => @controller.controller_path.split("/") << params[:action]),
+        :title => t("edit", :scope => @controller.controller_path.split("/")),
         :icon => "ui-icon-pencil",
         :column => "action_edit"
       }

@@ -1,11 +1,14 @@
+<% title t("teams.title") %>
+
 <div class="clear"></div>
-<h1>Teams</h1>
+<h1><%= t("teams.title") %></h1>
 
 <%= javascript_include_jqgrid %>
+<%= stylesheet_merged :jqgrid %>
 
 <%= jquery_custom_grid(
 	[
 		{ :field => "name", :label => "Team Name", :width => 200, :align => "center" }
-	], { :edit => false }
+	], { :view => false }
 ) %>
 

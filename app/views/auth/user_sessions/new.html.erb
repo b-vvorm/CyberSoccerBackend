@@ -1,12 +1,13 @@
+<% title(t("auth.sign_in")) %>
 <div class="prepend-7">
   <div class="span-10 default-container corner-all">
     <div class="header corner-top">
-        Sign in
+        <%= t("auth.sign_in") %>
     </div>
     <div class="content prepend-1">
         <% form_for @user_session, :url => auth_user_session_path, :html => {:class => "default-form"} do |f| %>
           <div class="clear prepend-3">
-              <%= link_to 'Sign up', new_auth_account_url %>
+              <%= link_to t("auth.sign_in"), new_auth_account_url %>
           </div>
           <div class="clear">
               <%= f.label :email, "", {:class => "span-3"} %>
@@ -17,8 +18,7 @@
               <%= f.password_field :password, :class => "prepend-1 span-5" %>
           </div>
           <div class="clear prepend-6">
-              <% #= f.submit "Sign in", :class => "button" %>
-              <%= link_to_function "Sign in", "$('.default-form').submit()", :class => "button span-2" %>
+              <%= link_to_function t("auth.sign_in"), "$('.default-form').submit()", :class => "button span-2" %>
           </div>
           <div class="clear"></div>
         <% end %>
