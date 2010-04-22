@@ -1,6 +1,10 @@
 en:
   teams:
-    delete: "Delete team."
-    edit: "Edit team."
+    delete: "Delete team"
+    edit: "Edit team"
+    new: "New team"
+    create: "Create"
+    save: "Save"
+    cancel: "Cancel"
     title: "Teams"
 
