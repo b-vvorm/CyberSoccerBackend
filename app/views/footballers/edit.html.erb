@@ -1,3 +1,6 @@
+<% javascript_merged :ui %>
+<% stylesheet_merged :ui %>
+
 <% errors_for :footballer, :header_message => "", :message => "" %>
 
 <% form_for @footballer, :html => {:class => "default-form"} do |f| %>
@@ -31,4 +34,61 @@
   </div>
   <div class="clear"></div>
 <% end %>
+
+
+	<style type="text/css">
+		#demo-frame > div.demo { padding: 10px !important; };
+	</style>
+	<script type="text/javascript">
+	$(function() {
+	  var slider2max = 20;
+		slider2 = $("#slider2").slider({
+			value:1,
+			min: 0,
+			max: 20,
+			step: 1,
+			slide: function(event, ui) {
+				//if(ui.value > 10) {
+				  //$("#slider2").slider( "value" , [10] )
+				  alert(ui);
+				//}
+				$("#amount").val('$' + ui.value);
+			},
+			change: function(event, ui) {
+			  if(ui.value > 10) {
+			    //$("#slider2").slider( "value" , [10] )
+			  }
+			},
+			start: function(event, ui) {
+			  if(ui.value > 10) {
+			    //$("#slider2").slider( "value" , [10] )
+			  }
+			}
+		});
+		$("#slider1").slider({
+			value:1,
+			min: 0,
+			max: 20,
+			step: 1,
+			slide: function(event, ui) {
+				$("#amount").val('$' + ui.value);
+				slider2max = slider2max - ui.value
+				//$("#slider2").slider( "option" , "max" , 20 - ui.value )
+			}
+		});
+		//$("#amount").val('$' + $("#slider").slider("value"));
+
+	});
+	</script>
+<div class="demo">
+
+<p>
+<input type="text" id="amount" style="border:0; color:#f6931f; font-weight:bold;" />
+</p>
+
+<input type="text" id="amount1" style="border:0; color:#f6931f; font-weight:bold;" />
+<div id="slider1"></div>
+<br/>
+<input type="text" id="amount2" style="border:0; color:#f6931f; font-weight:bold;" />
+<div id="slider2"></div>
 
