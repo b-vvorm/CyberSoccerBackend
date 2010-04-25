@@ -13,6 +13,7 @@ class TeamsController < ApplicationController
   def create
     @team = Team.new(params[:team])
     if @team.save
+      @team.create_default_footballers
       flash.now[:notice] = I18n.translate(:"teams.messages.success_create", :team_name => @team.name)
       flash.keep(:notice)
       redirect_to teams_url
@@ -24,6 +25,8 @@ class TeamsController < ApplicationController
   def update
     @team = Team.find(params[:id])
     if @team.update_attributes(params[:team])
+      flash.now[:notice] = I18n.translate(:"teams.messages.success_save", :team_name => @team.name)
+      flash.keep(:notice)
       redirect_to teams_url
     else
       render :action => :edit
@@ -46,7 +49,6 @@ class TeamsController < ApplicationController
   def grid_data
     teams = Team.find_all_by_user_id @current_user.id
     respond_to do |format|
-      format.html
       format.json { render :json => teams.to_jqgrid_json([:name], params[:page], params[:rows], teams.length) }
     end
   end

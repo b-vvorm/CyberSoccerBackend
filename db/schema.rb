@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100413193927) do
+ActiveRecord::Schema.define(:version => 20100425132034) do
 
   create_table "footballer_states", :force => true do |t|
     t.integer "footballer_id",                :null => false
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(:version => 20100413193927) do
     t.integer  "team_id",                                :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "skill_points", :default => 15,           :null => false
   end
 
   add_index "footballers", ["team_id"], :name => "footballers_team_id_fk"

@@ -1,0 +1,8 @@
+en:
+  footballers:
+    edit: "Edit footballer"
+    save: "Save"
+    cancel: "Cancel"
+    messages:
+      success_save: "Hey! Footballer {{footballer_name}} has saved successfull!"
+

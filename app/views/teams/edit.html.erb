@@ -1,4 +1,6 @@
 <% title t("teams.edit") %>
+<% errors_for :team, :header_message => "", :message => "" %>
+<% jqgrid_includes %>
 
 <div class="clear"></div>
 <h1><%= t("teams.edit") %></h1>
@@ -15,4 +17,6 @@
   </div>
   <div class="clear"></div>
 <% end %>
+<h1><%= t("teams.team_footballes") %></h1>
+<%= render :partial => 'footballers', :locals => {:team_id => params[:id]} %>
 

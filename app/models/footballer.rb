@@ -11,11 +11,14 @@
 #  team_id      :integer(4)      not null
 #  created_at   :datetime
 #  updated_at   :datetime
+#  skill_points :integer(4)      default(15), not null
 #
 
 class Footballer < ActiveRecord::Base
 
   belongs_to :team
+
+  validates_presence_of :name, :number, :speed, :technicality, :fight
 
 end
 

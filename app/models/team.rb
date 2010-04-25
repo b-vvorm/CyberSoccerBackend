@@ -14,5 +14,18 @@ class Team < ActiveRecord::Base
 
   validates_presence_of :name
 
+  def create_default_footballers
+    skill_points = 15
+    (1..5).each do |i|
+      Footballer.create :name => "footballer#{i}",
+                        :number => i,
+                        :speed => skill_points/3,
+                        :technicality => skill_points/3,
+                        :fight => skill_points/3,
+                        :team_id => id,
+                        :skill_points => skill_points
+    end
+  end
+
 end
 

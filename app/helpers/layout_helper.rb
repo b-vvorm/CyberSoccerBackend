@@ -32,8 +32,8 @@ module LayoutHelper
     content_for(:errors) { error_messages_for(*args) }
   end
 
-  def tab_selected?(controller_name)
-    "selected" if @controller.controller_path.split("/").include?(controller_name)
+  def tab_selected?(name)
+    "selected" if {:games => ["games"], :teams => ["teams", "footballers"]}[name].include? @controller.controller_path.split("/").first
   end
 
 end

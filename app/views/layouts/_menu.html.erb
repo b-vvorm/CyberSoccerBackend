@@ -1,9 +1,9 @@
 <div id="menu_container">
   <ul class="tabs corner-all span-24">
-    <li class="corner-top <%= tab_selected?('games') %>">
+    <li class="corner-top <%= tab_selected?(:games) %>">
       <%= link_to t("menu.games"), games_path %>
     </li>
-    <li class="corner-top <%= tab_selected?('teams') %>">
+    <li class="corner-top <%= tab_selected?(:teams) %>">
       <%= link_to t("menu.teams"), teams_path %>
     </li>
   </ul>

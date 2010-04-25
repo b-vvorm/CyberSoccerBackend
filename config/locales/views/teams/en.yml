@@ -7,7 +7,9 @@ en:
     save: "Save"
     cancel: "Cancel"
     title: "Teams"
+    team_footballes: "Team footballers list"
     messages:
       success_create: "Hey! Team {{team_name}} has created successfull!"
+      success_save: "Hey! Team {{team_name}} has saved successfull!"
       success_delete: "Hey! Team {{team_name}} has deleted successfull!"
 

@@ -1,0 +1,15 @@
+<%= jquery_custom_grid(
+	[
+		{ :field => "name",         :label => "Name",         :width => 150, :align => "center" },
+		{ :field => "skill_points", :label => "Skill Points", :width => 50, :align => "center" },
+		{ :field => "speed",        :label => "Speed",        :width => 50, :align => "center" },
+		{ :field => "technicality", :label => "Technicality", :width => 50, :align => "center" },
+		{ :field => "fight",        :label => "Fight",        :width => 50, :align => "center" }
+	], { :edit => true,
+	     :grid_data => url_for(:controller => :footballers, :action => :grid_data, :team_id => team_id),
+	     :controller => 'footballers'
+	    },
+	"Footballers list",
+	"footballes"
+) %>
+

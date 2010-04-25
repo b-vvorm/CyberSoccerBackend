@@ -47,6 +47,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :games, :collection => {:grid_data => :get}
   map.resources :teams, :collection => {:grid_data => :get}
+  map.resources :footballers, :collection => {:grid_data => :get}
 
   map.root :controller => "games"
 
