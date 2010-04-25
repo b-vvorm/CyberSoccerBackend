@@ -102,6 +102,82 @@ html, body {
 }
 /* Menu finish */
 
+/* Messages start */
+#errorExplanation li {
+  border: 1px solid #cd0a0a;
+  background: #fef1ec url(../images/redmond/ui-bg_glass_95_fef1ec_1x400.png) 50% 50% repeat-x;
+  color: #cd0a0a;
+  padding: 0.7em;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  list-style-type: none;
+}
+#errorExplanation ul {
+  margin-left: 0;
+  padding-left: 0;
+}
+#errorExplanation {
+  width: 845px;
+}
+.notice p {
+  border: 1px solid #fad42e;
+  background: #fbec88 url(../images/redmond/ui-bg_flat_55_fbec88_40x100.png) 50% 50% repeat-x;
+  color: #363636;
+  padding: 0.7em;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  width: 815px;
+}
+/* Messages finish */
+
+/* Tabs start */
+.tabs {
+  border: 1px solid #4297d7;
+  background: #5c9ccc url(../images/redmond/ui-bg_gloss-wave_55_5c9ccc_500x100.png) 50% 50% repeat-x;
+  color: #ffffff;
+  font-weight: bold;
+  padding-left: 0;
+  list-style: none;
+  position: relative;
+  padding: 2px 2px 0;
+  height: 31px;
+}
+.tabs li {
+  border: 1px solid #c5dbec;
+  background: #dfeffc url(../images/redmond/ui-bg_glass_85_dfeffc_1x400.png) 50% 50% repeat-x;
+  font-weight: bold;
+  color: #2e6e9e;
+  outline: none;
+  list-style-type: none;
+  list-style-position: outside;
+  display: inline;
+  position: relative;
+  float: left;
+  border-bottom-width: 0 !important;
+  margin: 0 2px -1px 0;
+  padding: 0;
+}
+.tabs .selected {
+  padding-bottom: 1px;
+  border-bottom-width: 0;
+  border: 1px solid #79b7e7;
+  background: #f5f8f9 url(../images/redmond/ui-bg_inset-hard_100_f5f8f9_1x100.png) 50% 50% repeat-x;
+  font-weight: bold;
+  color: #e17009;
+  outline: none;
+}
+.tabs li a {
+  float: left;
+  text-decoration: none;
+  padding: 6px 12px;
+}
+.tabs .selected a, .tabs .selected a:link, .tabs .selected a:visited {
+  color: #e17009;
+  outline: none;
+  text-decoration: none;
+}
+/* Tabs finish */
+
 /* Corner radius start */
 .corner-tl { -moz-border-radius-topleft: 5px; -webkit-border-top-left-radius: 5px; }
 .corner-tr { -moz-border-radius-topright: 5px; -webkit-border-top-right-radius: 5px; }

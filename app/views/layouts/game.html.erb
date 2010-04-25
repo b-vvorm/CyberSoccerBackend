@@ -17,6 +17,8 @@
           <div class="clear"></div>
         </div>
         <div id="content">
+          <%= yield(:errors) %>
+          <%= notice %>
           <%= render '/layouts/menu' %>
           <%= yield %>
         </div>

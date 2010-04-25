@@ -21,5 +21,20 @@ module LayoutHelper
     content_for(:head) { javascript_include_merged(*args) }
   end
 
+  def notice
+    if flash[:notice]
+      content = ''
+      content << content_tag(:div, content_tag(:p, flash[:notice]), :class => "notice")
+    end
+  end
+
+  def errors_for(*args)
+    content_for(:errors) { error_messages_for(*args) }
+  end
+
+  def tab_selected?(controller_name)
+    "selected" if @controller.controller_path.split("/").include?(controller_name)
+  end
+
 end
 

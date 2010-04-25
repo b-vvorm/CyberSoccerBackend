@@ -1,4 +1,5 @@
 <% title(t("auth.sign_on")) %>
+<%= error_messages_for :user, :header_message => "", :message => "" %>
 <div class="prepend-7">
   <div class="span-10 default-container corner-all">
     <div class="header corner-top">
@@ -6,7 +7,6 @@
     </div>
     <div class="content prepend-1">
         <% form_for @user, :url => auth_account_path, :html => {:class => "default-form"} do |f| %>
-          <%= f.error_messages %>
           <%= render :partial => "form", :object => f %>
           <div class="clear prepend-4">
               <div class="span-2">

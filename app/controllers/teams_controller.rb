@@ -13,6 +13,8 @@ class TeamsController < ApplicationController
   def create
     @team = Team.new(params[:team])
     if @team.save
+      flash.now[:notice] = I18n.translate(:"teams.messages.success_create", :team_name => @team.name)
+      flash.keep(:notice)
       redirect_to teams_url
     else
       render :action => :new

@@ -7,4 +7,6 @@ en:
     save: "Save"
     cancel: "Cancel"
     title: "Teams"
+    messages:
+      success_create: "Hey! Team {{team_name}} has created successfull!"
 
