@@ -1,0 +1,4 @@
+page.replace_html "teams_container", :partial => "teams"
+page.remove "notice"
+page.insert_html :before, 'menu_container', notice
+

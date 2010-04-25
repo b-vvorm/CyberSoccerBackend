@@ -28,7 +28,11 @@ function addGridRowButtons(grid, buttons) {
         var cl = ids[i];
         for (var b in buttons) {
             button = buttons[b]
-            link = '<a title="' + button.title + '" href="' + button.path.replace(/:id/, cl) + '"><span class="ui-icon ' + button.icon + '"></span></a>';
+            if(button.path) {
+                link = '<a title="' + button.title + '" href="' + button.path.replace(/:id/, cl) + '"><span class="ui-icon ' + button.icon + '"></span></a>';
+            } else if(button.func) {
+                link = '<a title="' + button.title + '" href="javascript:' + button.func.replace(/:id/, cl) + '"><span class="ui-icon ' + button.icon + '"></span></a>';
+            }
             options = {};
             options[button.column] = link;
             $(grid).jqGrid('setRowData',ids[i],options);

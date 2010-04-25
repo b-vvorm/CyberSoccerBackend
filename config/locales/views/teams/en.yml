@@ -9,4 +9,5 @@ en:
     title: "Teams"
     messages:
       success_create: "Hey! Team {{team_name}} has created successfull!"
+      success_delete: "Hey! Team {{team_name}} has deleted successfull!"
 

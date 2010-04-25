@@ -3,9 +3,7 @@
 
 <div class="clear"></div>
 <h1><%= t("teams.title") %></h1>
-<%= jquery_custom_grid(
-	[
-		{ :field => "name", :label => "Team Name", :width => 200, :align => "center" }
-	], { :edit => true, :add => true, :delete => true }, "Teams list"
-) %>
+<div id="teams_container">
+  <%= render :partial => 'teams' %>
+</div>
 

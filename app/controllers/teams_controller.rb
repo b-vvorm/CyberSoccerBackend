@@ -38,6 +38,9 @@ class TeamsController < ApplicationController
   end
 
   def destroy
+    team = Team.find(params[:id])
+    team.delete
+    flash.now[:notice] = I18n.translate(:"teams.messages.success_delete", :team_name => team.name)
   end
 
   def grid_data

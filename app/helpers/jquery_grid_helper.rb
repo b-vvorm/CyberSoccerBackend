@@ -102,7 +102,7 @@ module JqueryGridHelper
 
     if show_delete
       buttons << {
-        :path => url_for(:action => "destroy", :id => ":id", :method => "DELETE"),
+        :func => "$.ajax({url: '#{url_for(:action => :destroy, :id => ':id')}', type: 'post', dataType:'script', data: { '_method': 'delete' }}); return false;",
         :title => t("delete", :scope => @controller.controller_path.split("/")),
         :icon => "ui-icon-trash",
         :column => "action_delete"

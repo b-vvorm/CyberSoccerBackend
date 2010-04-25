@@ -24,7 +24,7 @@ module LayoutHelper
   def notice
     if flash[:notice]
       content = ''
-      content << content_tag(:div, content_tag(:p, flash[:notice]), :class => "notice")
+      content << content_tag(:div, content_tag(:p, flash[:notice]), :class => "notice", :id => "notice")
     end
   end
 
