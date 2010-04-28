@@ -3,7 +3,7 @@ class CreateGames < ActiveRecord::Migration
     create_table :games do |t|
       t.column    :status, "enum('created','started','finished')", :null => false, :default => "created"
       t.integer   :first_team_id,         :null => false
-      t.integer   :second_team_id,        :null => false
+      t.integer   :second_team_id
       t.integer   :game_half_length,      :null => false, :default => 45
       t.datetime  :created_at
     end
@@ -12,6 +12,8 @@ class CreateGames < ActiveRecord::Migration
   end
 
   def self.down
+    remove_foreign_key :games, :column => "first_team_id"
+    remove_foreign_key :games, :column => "second_team_id"
     drop_table :games
   end
 end

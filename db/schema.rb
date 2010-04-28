@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(:version => 20100425132034) do
   create_table "games", :force => true do |t|
     t.string   "status",           :limit => 0, :default => "created", :null => false
     t.integer  "first_team_id",                                        :null => false
-    t.integer  "second_team_id",                                       :null => false
+    t.integer  "second_team_id"
     t.integer  "game_half_length",              :default => 45,        :null => false
     t.datetime "created_at"
   end

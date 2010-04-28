@@ -35,7 +35,7 @@ module JqueryGridHelper
     row_buttons = options.delete(:row_buttons) || []
     grid_buttons = options.delete(:grid_buttons) || []
     row_buttons += get_row_buttons(show_view, show_edit, show_delete, options)
-    grid_buttons += get_grid_buttons(show_add)
+    grid_buttons += get_grid_buttons(show_add, options)
 
     fields << { :field => "action_view", :label => "", :width => 14, :search => false } if show_view
     fields << { :field => "action_edit", :label => "", :width => 14, :search => false } if show_edit
@@ -112,12 +112,12 @@ module JqueryGridHelper
     buttons
   end
 
-  def get_grid_buttons(show_add)
+  def get_grid_buttons(show_add, options)
     buttons = []
     buttons << {
       :buttonicon => "ui-icon-plus",
       :caption => "",
-      :title => t(".create_new"),
+      :title => t("create", :scope => options[:controller]),
       :onClickButton => "function(){ window.location = '#{url_for :action => "new"}'}",
       :position => "first"
     } if show_add

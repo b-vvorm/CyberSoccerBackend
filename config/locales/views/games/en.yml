@@ -1,4 +1,10 @@
 en:
   games:
+    delete: "Delete game"
+    edit: "Edit game"
+    new: "New game"
+    create: "Create"
+    save: "Save"
+    cancel: "Cancel"
     title: "Games"
 
