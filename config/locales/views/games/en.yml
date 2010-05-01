@@ -3,8 +3,13 @@ en:
     delete: "Delete game"
     edit: "Edit game"
     new: "New game"
+    view: "View game"
     create: "Create"
     save: "Save"
     cancel: "Cancel"
+    connect: "Connect"
     title: "Games"
+    messages:
+      success_create: "Hey! Game has created successfull!"
+      success_connect: "Hey! You have connected successfully!"
 

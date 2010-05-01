@@ -1,0 +1,9 @@
+<div id="game">
+  <h1>Waing for second player</h1>
+</div>
+<% javascript_tag do %>
+  $(document).ready(function() {
+    <%= remote_function :url => {:action => :start, :id => @game.id} %>
+  });
+<% end %>
+

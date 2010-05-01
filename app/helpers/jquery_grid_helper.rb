@@ -24,22 +24,22 @@ module JqueryGridHelper
       :edit => false,
       :add => false,
       :view => false,
-      :search => false
+      :search => false,
+      :connect => false
     }.merge(options)
 
     show_add = options.delete(:add)
-    show_view = options.delete(:view)
-    show_edit = options.delete(:edit)
-    show_delete = options.delete(:delete)
+
     width = get_width(options, fields)
     row_buttons = options.delete(:row_buttons) || []
     grid_buttons = options.delete(:grid_buttons) || []
-    row_buttons += get_row_buttons(show_view, show_edit, show_delete, options)
+    row_buttons += get_row_buttons(options)
     grid_buttons += get_grid_buttons(show_add, options)
 
-    fields << { :field => "action_view", :label => "", :width => 14, :search => false } if show_view
-    fields << { :field => "action_edit", :label => "", :width => 14, :search => false } if show_edit
-    fields << { :field => "action_delete", :label => "", :width => 14, :search => false } if show_delete
+    fields << { :field => "action_view", :label => "", :width => 14, :search => false } if options.delete(:view)
+    fields << { :field => "action_edit", :label => "", :width => 14, :search => false } if options.delete(:edit)
+    fields << { :field => "action_delete", :label => "", :width => 14, :search => false } if options.delete(:delete)
+    fields << { :field => "action_connect", :label => "", :width => 14, :search => false } if options.delete(:connect)
 
     output = jqgrid(title, grid_name, options[:grid_data], fields, options)
 
@@ -81,18 +81,18 @@ module JqueryGridHelper
     width = fields.inject(DEFAULT_GRID_WIDTH) {|sum, field| sum + field[:width]} unless width
   end
 
-  def get_row_buttons(show_view, show_edit, show_delete, options)
+  def get_row_buttons(options)
     buttons = []
-    if show_view
+    if options.include?(:view)
       buttons << {
         :path => url_for(:controller => options[:controller], :action => "show", :id => ":id"),
-        :title => t("view_details", :scope => options[:controller]),
+        :title => t("view", :scope => options[:controller]),
         :icon => "ui-icon-comment",
         :column => "action_view"
       }
     end
 
-    if show_edit
+    if options.include?(:edit)
       buttons << {
         :path => url_for(:controller => options[:controller], :action => "edit", :id => ":id"),
         :title => t("edit", :scope => options[:controller]),
@@ -101,7 +101,7 @@ module JqueryGridHelper
       }
     end
 
-    if show_delete
+    if options.include?(:delete)
       buttons << {
         :func => "$.ajax({url: '#{url_for(:action => :destroy, :id => ':id')}', type: 'post', dataType:'script', data: { '_method': 'delete' }}); return false;",
         :title => t("delete", :scope => options[:controller]),
@@ -109,6 +109,16 @@ module JqueryGridHelper
         :column => "action_delete"
       }
     end
+
+    if options.include?(:connect)
+      buttons << {
+        :path => url_for(:controller => options[:controller], :action => "connect", :id => ":id"),
+        :title => t("connect", :scope => options[:controller]),
+        :icon => "ui-icon-star",
+        :column => "action_connect"
+      }
+    end
+
     buttons
   end
 

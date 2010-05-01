@@ -1,7 +1,6 @@
 class FootballersController < ApplicationController
 
   before_filter :require_user
-  layout 'game'
 
   def edit
     @footballer = Footballer.find params[:id]

@@ -1,0 +1,8 @@
+page.delay(3) do
+  if @game.second_team.blank?
+    page << remote_function(:url => {:action => :start, :id => @game.id})
+  else
+    page.replace 'game', :partial => 'game'
+  end
+end
+
